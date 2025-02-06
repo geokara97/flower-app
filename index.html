@@ -11,7 +11,7 @@
     <meta name="description" content="" />
     <meta name="viewport" content="wclassth=device-wclassth, initial-scale=1" />
     <link rel="stylesheet" href="css.css" />
-    <script src="javscript.js"></script>
+    <script src="javascript.js"></script>
     
   </head>
   <body>
@@ -28,7 +28,6 @@
     </div>
     
       <button id="button">Add</button>
-      <button id="delete">Clear All</button>
       <h2>Ανοιχτά Τραπέζια</h2>
       <table id="open-tables">
         <thead>
@@ -44,12 +43,13 @@
         </tbody>
       </table>
 
-      <h2>Πληρωμένα Τραπέζια</h2>
-      <table id="payed-tables">
+      <h2>Πληρωμή</h2>
+      <table id="payment-table">
         <thead>
           <tr>
             <th>Τραπέζι</th>
             <th>Δίσκοι</th>
+            <th>Ποσό</th>
             <th>Action</th>
           </tr>
         
@@ -58,6 +58,41 @@
 
         </tbody>
       </table>
+
+      <h2>Πληρωμένα Τραπέζια</h2>
+      <table id="payed-tables">
+        <thead>
+          <tr>
+            <th>Τραπέζι</th>
+            <th>Δίσκοι</th>
+            <th>Ποσό Πληρωμής</th>
+            <th>Έκπτωση</th>
+  
+          </tr>
+        
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+    <button id="report">Report</button>
+     <h2>Σύνολα</h2>
+     <table id="totals-table">
+      <thead>
+          <tr>
+              <th>Συνολικοί Δίσκοι</th>
+              <th>Συνολικό Ποσό</th>
+              <th>Συνολική Έκπτωση</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td id="total-disks">0</td>
+              <td id="total-payments">0</td>
+              <td id="total-discount">0</td>
+          </tr>
+      </tbody>
+  </table>
 
 
 
@@ -70,15 +105,3 @@
 
   </body>
 </html>
-<!-- <div class="disk-price-div">
-      <label for="disk-price">Τιμή ανά δίσκο</label>
-      <input class="disk-price" type="text" />
-    </div>
-      <div class="discount-div">
-      <label for="discount">Έκπτωση</label>
-      <input class="discount" type="text" />
-    </div>
-      <div class="money-div">
-      <label for="money">Ποσό Πληρωμής</label>
-      <input class="money" type="text" />
-    </div> -->

@@ -1,194 +1,7 @@
-/* Basic reset and layout */
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f0f2f5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.tab {
-  background-color: #ffffff;
-  border-radius: 12px;
-  padding: 30px 40px;
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 400px;
-  font-size: 16px;
-}
-
-h2 {
-  text-align: center;
-  color: #333;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
-
-/* Form section and spacing */
-/* .table-div, .disks-div, .disk-price-div, .discount-div, .money-div {
-  margin-bottom: 18px;
-}
-
-label {
-  display: block;
-  color: #333;
-  font-weight: 500;
-  margin-bottom: 8px;
-  font-size: 14px;
-}
-
-/* Styling inputs */
-/* input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 16px;
-  background-color: #f9f9f9;
-  color: #333;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-input:focus {
-  border-color: #4e73df;
-  box-shadow: 0 0 8px rgba(78, 115, 223, 0.3);
-  outline: none;
-} */
-
-/* Button styling
-button {
-  width: 100%;
-  padding: 14px;
-  background-color: #4e73df;
-  color: white;
-  font-size: 18px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-button:hover {
-  background-color: #2e59d9;
-  transform: translateY(-2px);
-}
-
-button:active {
-  background-color: #1c47b8;
-  transform: translateY(1px);
-}
-
-/* Responsiveness */
-/* @media (max-width: 450px) {
-  .tab {
-    padding: 20px;
-    width: 90%;
-  }
-
-  h2 {
-    font-size: 20px;
-  }
-} */
-/* Global Styles */
-/* body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to right, #8360c3, #2ebf91);
-  color: #fff;
-  text-align: center;
-  margin: 0;
-  padding: 20px;
-}
-
-/* Form Container */
-/* .form-container {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  max-width: 400px;
-  margin: auto;
-  backdrop-filter: blur(10px);
-} */
-
-/* Input Fields */
-/* input {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-} */
-
-/* input:focus {
-  outline: none;
-  box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.5);
-} */
-
-/* Button */
-/* button {
-  background: #ff6f61;
-  color: white;
-  border: none;
-  padding: 12px;
-  margin-top: 10px;
-  width: 100%;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background 0.3s ease-in-out;
-} */
-
-/* button:hover {
-  background: #ff483a;
-} */
-
-/* Table Styles */
-/* table {
-  width: 90%;
-  margin: 20px auto;
-  border-collapse: collapse;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  overflow: hidden;
-} */
-
-/* th, td {
-  padding: 12px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-} */
-
-/* th {
-  background: rgba(255, 255, 255, 0.3);
-  font-size: 18px;
-} */
-
-/* td {
-  font-size: 16px;
-} */
-
-/* Responsive Design */
-/* @media (max-width: 600px) {
-  .form-container {
-      width: 90%;
-  } */
-
-  /* table {
-      width: 100%;
-  }
-} */
-
-/* Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-/* Global Styles */
+
 body {
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(to right, #061728, #27646d);
@@ -198,12 +11,7 @@ body {
     padding: 20px;
 }
 
-/* Main Container */
 
-
-
-
-/* Input Fields */
 input {
     width: 100%;
     padding: 12px;
@@ -218,7 +26,7 @@ input:focus {
     box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.5);
 }
 
-/* Button */
+
 button {
     background: #ff6f61;
     color: white;
@@ -238,7 +46,7 @@ button:hover {
     background: #ff483a;
 }
 
-/* Table Styles */
+
 table {
     width: 100%;
     margin-top: 20px;
@@ -263,7 +71,7 @@ td {
     font-size: 16px;
 }
 
-/* Responsive Design */
+
 @media (max-width: 600px) {
     .container {
         width: 90%;
