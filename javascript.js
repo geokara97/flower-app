@@ -26,12 +26,13 @@ document.addEventListener("DOMContentLoaded", function () {
         
         let tableName = tableInput.value.trim();
         let disksValue = parseInt(disksInput.value.trim(), 10);
-        current.textContent=parseInt(current.textContent)-disksValue;
+        
 
         if (!tableName || isNaN(disksValue) || disksValue <= 0) {
             alert("Please enter a valid table name and number of disks!");
             return;
         }
+        current.textContent=parseInt(current.textContent)-disksValue;
 
         let rows = openTable.getElementsByTagName("tr");
         let tableExists = false;
