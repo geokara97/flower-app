@@ -3,16 +3,30 @@ document.addEventListener("DOMContentLoaded", function () {
     let button = document.getElementById("button");
     let button2 = document.getElementById("delete");
     let button3=document.getElementById('report');
+    let initial =document.getElementById('start')
+    let current=document.getElementById('current');   
+    let flag=1;
+    
+    initial.addEventListener('input',function(){
+    event.preventDefault()
+    
+    current.textContent=initial.value;
+    
+    })
+    
 
     button.addEventListener('click', function (event) {
         event.preventDefault();
-
+        
+        
         let openTable = document.querySelector('#open-tables tbody');
         let tableInput = document.getElementById("table");
         let disksInput = document.getElementById("disks");
-
+        
+        
         let tableName = tableInput.value.trim();
         let disksValue = parseInt(disksInput.value.trim(), 10);
+        current.textContent=parseInt(current.textContent)-disksValue;
 
         if (!tableName || isNaN(disksValue) || disksValue <= 0) {
             alert("Please enter a valid table name and number of disks!");
@@ -30,6 +44,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 let currentDisks = parseInt(disksCell.textContent || 0, 10);
                 disksCell.textContent = currentDisks + disksValue;
                 tableExists = true;
+                
+
                 return; // Stop execution after updating existing entry
             }
         }
@@ -41,11 +57,11 @@ document.addEventListener("DOMContentLoaded", function () {
             let actionCell = document.createElement('td');
             let payButton = document.createElement('button');
             let deleteButton=document.createElement('button');
-
             tableCell.textContent = tableName;
             disksCell.textContent = disksValue;
             payButton.textContent = 'Pay';
             deleteButton.textContent = 'Delete';
+            
 
             deleteButton.addEventListener('click', function() {
                 let table = document.querySelector('#open-tables tbody');
@@ -54,6 +70,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 
                 let tableName = tableInput.value.trim();
                 let disksValue = parseInt(disksInput.value.trim(), 10);
+                current.textContent=parseInt(current.textContent)+disksValue;
+
                 for (let row of rows) {
                     let tableCell = row.cells[0]; 
                         
@@ -63,9 +81,19 @@ document.addEventListener("DOMContentLoaded", function () {
                         let updatedDisks=parseFloat(currentDisks) - parseFloat(disksValue);
                         disksCell.textContent = updatedDisks;
                 
-                        }
+                        if (disksCell.textContent == 0) {
+                            // Remove the row from the open table
+                            row.remove();
+                        }    
+                    }
                                 
                 }});
+                if(current.textContent<='200' &&flag===1){
+                    alert('Χρειαζόμαστε Λουλούδια!')
+                    flag=0;
+                }
+                
+
 
 
             // PAY FUNCTION - Adds to payment table but keeps in open-tables
@@ -80,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 let paymentActionCell = document.createElement('td');
                 let undoButton = document.createElement('button');
                 let completeButton = document.createElement('button');
-
+                amountInput.type='number';
                 paymentTableCell.textContent = tableName;
                 paymentDisksCell.textContent = disksInput.value;
                 undoButton.textContent = 'Undo Payment';
@@ -96,6 +124,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 completeButton.addEventListener('click', function () {
                     // Remove the payment row from the open table
                     paymentRow.remove();
+                    
                 
                     // Get the paid table's tbody
                     let paymentTable = document.querySelector('#payed-tables tbody');
@@ -153,6 +182,10 @@ document.addEventListener("DOMContentLoaded", function () {
                             let disksCell = row.cells[1];
                             let currentDisks = parseInt(disksCell.textContent || 0, 10);
                             disksCell.textContent = currentDisks - parseInt(disksInput.value, 10);
+                            if (disksCell.textContent == 0) {
+                                // Remove the row from the open table
+                                row.remove();
+                            }
                             break; // Exit the loop once the table is found and updated
                         }
                     }
@@ -170,13 +203,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 paymentTable.appendChild(paymentRow);
             });
 
+
+            
             actionCell.appendChild(payButton);
             actionCell.appendChild(deleteButton);
             newRow.appendChild(tableCell);
             newRow.appendChild(disksCell);
             newRow.appendChild(actionCell);
             openTable.appendChild(newRow);
+            
+            
         }
+        
     
         button3.addEventListener('click', function () {
             let paymentTable = document.querySelector('#payed-tables tbody');
@@ -208,7 +246,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
     
-
-   
-
-
