@@ -45,6 +45,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 let currentDisks = parseInt(disksCell.textContent || 0, 10);
                 disksCell.textContent = currentDisks + disksValue;
                 tableExists = true;
+                if(current.textContent<='200' &&flag===1){
+                    alert('Χρειαζόμαστε Λουλούδια!')
+                    flag=0;
+                }
+                
+
                 
 
                 return; // Stop execution after updating existing entry
